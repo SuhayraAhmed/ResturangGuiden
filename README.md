@@ -40,18 +40,13 @@ I API-projektets databas lagras följande information:
 Restauranger: Namn, bildlänk, beskrivning
 
 
-Omdömen (om funktionen aktiveras i framtiden): Text, tidpunkt, restaurangID
-Framtida utvecklingsmöjligheter
-Det finns god potential att vidareutveckla Restaurangguide med fler funktioner, exempelvis:
-Betygsystem där användare kan ge stjärnor
+Omdömen : Användare kan se och skriva omdöme om resturangerna.
 
+
+Framtida utvecklingsmöjligheter:
 
 Filtrering av restauranger baserat på stadsdel eller prisklass
-
-
 Sortering efter högsta betyg eller flest omdömen
-
-
 Inloggning för användare för att spara favoritrestauranger eller tidigare omdömen
 
 
