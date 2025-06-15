@@ -1,0 +1,21 @@
+﻿@model RestaurangGuiden.Models.Omdome
+
+<div class="container mt-4">
+    <h2>Skriv ett omdöme</h2>
+
+    <form asp-action="SkickaOmdome" method="post">
+        <input type="hidden" name="RestaurangId" value="@Model.RestaurangId" />
+
+        <div class="mb-3">
+            <label class="form-label">Betyg (1–5)</label>
+            <input type="number" name="Betyg" class="form-control" min="1" max="5" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Kommentar</label>
+            <textarea name="Kommentar" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Skicka</button>
+    </form>
+</div>

@@ -1,0 +1,53 @@
+﻿
+<body class="omdome-body">
+
+    <h2 class="text-center my-4">En matupplevelse för alla smaker</h2>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <p class="text-danger text-center"> Inga restauranger hittades.</p>
+    }
+    else
+    {
+        <div class="omdome-container">
+            <div class="row gy-3">
+              
+                @foreach (var restaurant in Model)
+                {
+                    <div class="col-md-6">
+                        <div class="card h-100" style="max-width: 100%;">
+                            
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    @{
+                                        string imagePath = restaurant.Namn switch
+                                        {
+                                            "Mei Rose Rooftop Bar & Bistro" => "/img/8cd4d9d8-8c8b-4bd4-bf1e-e411f5935353.jpg",
+                                            "Bord 27" => "/img/281fd166-f753-43c5-8119-cabd074bf0f0.jpg",
+                                            "Carbon" => "/img/49c40474-3b87-4800-a81a-99a3c848861c.jpg",
+                                            "Blackstone Steakhouse Kungstorget" => "/img/a1eb16f3-26f8-48eb-874e-bcc0376c560d.jpg",
+                                            "Takame Göteborg" => "/img/3c19f12d-f825-43ba-b955-85983976597a.jpg",
+                                            "Panos Panos Tavern" => "/img/panos.jpg",
+                                            "Magazzino" => "/img/7aa3f8cc-1034-498e-b838-e3f410d855f3.jpg",
+                                            "Barrique" => "/img/4e608858-434a-411c-9e94-af3434e6233c.jpg",
+                                            _ => "/img/default.jpg"
+                                        };
+                                    }
+                                    <img src="@imagePath" class="img-fluid rounded-start" alt="@restaurant.Namn">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@restaurant.Namn</h5>
+                                        <p class="card-text">@restaurant.Beskrivning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+
+</body>

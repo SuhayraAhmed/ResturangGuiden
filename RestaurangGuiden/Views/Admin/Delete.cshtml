@@ -1,0 +1,26 @@
+﻿@model RestaurangGuiden.Models.Restaurang
+
+
+<body class="Admin-index">
+
+    <h1>Bekräfta borttagning av restaurang</h1>
+
+    <!-- för att ta bort restaurang -->
+    <form asp-action="Delete" method="post" class="restaurang-form mb-5">
+        @if (Model.Id != 0)
+        {
+            <input type="hidden" asp-for="Id" /> 
+        }
+
+        <div class="alert alert-danger">
+            <strong>Är du säker på att du vill ta bort restaurangen?</strong>
+            <p><strong>Restaurang:</strong> @Model.Namn</p>
+            <p><strong>Adress:</strong> @Model.Adress</p>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Ja, ta bort</button>
+        <a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Avbryt</a>  
+    </form>
+
+</body>
+

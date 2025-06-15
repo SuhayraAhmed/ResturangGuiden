@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RestaurangGuiden.Models.Restaurang>
+
+<body class=" restrang-body">
+
+    <div class="container my-4">
+        <h1 class="text-center mb-4">Nya och populära restauranger i Göteborg</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            @foreach (var restaurang in Model)
+            {
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        @if (!string.IsNullOrEmpty(restaurang.BildUrl))
+                        {
+                            <img src="@restaurang.BildUrl" class="card-img-top" alt="@restaurang.Namn">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@restaurang.Namn</h5>
+                            <p class="card-text"><strong>Adress:</strong> @restaurang.Adress</p>
+                            <h6 class="card-subtitle mb-2 text-muted">Menyer:</h6>
+                            <ul class="list-group list-group-flush">
+                                @foreach (var meny in restaurang.Menyer)
+                                {
+                                    <li class="list-group-item">@meny.Rätt - @meny.Pris kr</li>
+                                }
+                            </ul>
+
+                            <a asp-controller="Home" asp-action="CreateOmdome" asp-route-restaurangId="@restaurang.Id" class="btn btn-primary mt-2">
+                                Skriv omdöme
+                            </a>
+                            <a asp-controller="Restauranger" asp-action="RestaurangOmdome" asp-route-id="@restaurang.Id" class="btn btn-outline-secondary mt-2">
+                                Visa omdömen
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+
+

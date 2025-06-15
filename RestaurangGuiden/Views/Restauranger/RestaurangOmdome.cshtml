@@ -1,0 +1,52 @@
+﻿@model RestaurangMedOmdomenViewModel
+
+<div class="restrang-body">
+    <div class="container my-4">
+        <div class="mx-auto" style="max-width: 350PX;">
+            <h1 class="text-center mb-4">@Model.Restaurang.Namn</h1>
+
+            @if (TempData["Tack"] != null)
+            {
+                <div class="alert alert-success">@TempData["Tack"]</div>
+            }
+
+            <div class="card mb-4">
+                @if (!string.IsNullOrEmpty(Model.Restaurang.BildUrl))
+                {
+                    <img src="@Model.Restaurang.BildUrl" class="card-img-top" alt="@Model.Restaurang.Namn">
+                }
+
+                <div class="card-body">
+                    <p><strong>Adress:</strong> @Model.Restaurang.Adress</p>
+
+                    <h6>Menyer:</h6>
+                    <ul class="list-group">
+                        @foreach (var meny in Model.Restaurang.Menyer)
+                        {
+                            <li class="list-group-item">@meny.Rätt - @meny.Pris kr</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Omdömen</h4>
+
+            @if (Model.Omdomen.Any())
+            {
+                <ul class="list-group">
+                    @foreach (var o in Model.Omdomen)
+                    {
+                        <li class="list-group-item">
+                            <strong>Betyg:</strong> @o.Betyg<br />
+                            <em>@o.Kommentar</em>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted">Inga omdömen ännu.</p>
+            }
+        </div>
+    </div>
+</div>

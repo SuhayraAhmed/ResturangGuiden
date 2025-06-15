@@ -1,0 +1,408 @@
+
+
+html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    
+}
+.home-body{
+    background-color: black;
+}
+.navbar-under {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 2rem;
+    background-color: black
+}
+
+    .navbar-under .nav-link {
+        color: white; 
+        font-size: 1rem;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+
+    
+    .navbar-under .bi-person-lock {
+        font-size: 1.2rem;
+        margin-right: 5px; 
+        vertical-align: middle; 
+    }
+
+        .navbar-under .nav-link:hover{
+            color: #ff6f61;
+        }
+
+    .navbar-under .navbar-brand:hover {
+        color: #ff6f61; 
+    }
+
+    .navbar-under .navbar-brand {
+        color: #ff6f61;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+/* Hero sectionen */
+main {
+    flex: 1; 
+  
+}
+
+.hero-section {
+    background: url('/Img/Rest.jpg') no-repeat center center; /* Bakgrundsbild */
+    background-size: cover; 
+    min-height: 100vh; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    padding-right: 50%; 
+    box-sizing: border-box;
+}
+
+    .hero-section .container {
+        max-width: 600px; 
+    }
+
+    .hero-section h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0 0 1rem 0; 
+
+    }
+
+    .hero-section p {
+        font-size: 1.5rem; 
+        font-weight: 300;
+        margin: 0;
+    }
+
+.about-section {
+    background-color: black; 
+    margin-bottom: 0;
+    padding: 20px 0;
+    
+}
+.about-text {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+.carousel img {
+    height: 300px;
+    object-fit: cover;
+}
+
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 0; 
+    position: relative;
+}
+
+
+/*för mindre skärmar */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem; 
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+}
+
+/*för inlogningsidan*/
+.Inlognings-body {
+    background-color: black;
+}
+.account-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 92.5vh;
+    background-color: black;
+}
+
+.box {
+    background-color:#9d4104;
+
+    display: flex;
+    flex-direction: column; 
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.field {
+    position: relative;                               
+    margin-bottom: 15px;
+}
+
+    .field input {
+        width: 100%;
+        padding: 12px 40px;                            
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #333;
+        background-color: #f9f9f9;
+        outline: none;
+        transition: border-color 0.3s;                
+    }
+
+        .field input:focus {
+            border-color: #3b82f6;                 
+        }
+
+    .field span.icon {
+        position: absolute;
+        right: 10px;                             
+        top: 50%;
+        transform: translateY(-50%);             
+        color: #666;
+        pointer-events: none;
+        font-size: 20px;
+    }
+
+.admin-index {
+    padding-top: 100px;
+    background-color:#333
+}
+    .admin-index h1 {
+        font-size: 20px;
+        color: white;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+
+
+/* stil för formuläret */
+.restaurang-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .restaurang-form .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .restaurang-form .btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.1rem;
+        background-color: #ff6f61; 
+        color: white;
+        border-color: #ff6f61;
+    }
+
+        .restaurang-form .btn:hover {
+            background-color: #3a9b06;
+            border-color: #3a9b06;
+        }
+
+
+.Admin-index {
+    padding-top: 180px;
+    background-color: #333;
+    ;
+}
+
+    .Admin-index h1 {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding-bottom: 50px;
+       
+    }
+
+
+.restaurang-card {
+    max-width: 100px; 
+    margin: 15px auto;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    margin: 0 auto; 
+    height: 300px; 
+}
+
+.card-img-top {
+    height: 200px; 
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; 
+    
+}
+
+.card-body {
+    background-color: #fff;
+    padding: 15px; 
+    text-align: left;
+    height: 240px; 
+    overflow-y: auto; 
+}
+
+.card-title {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    color: #555;
+    font-size: 1rem; 
+    line-height: 1.4; 
+}
+
+.card ul {
+    padding-left: 20px; 
+    font-size: 0.9rem; 
+}
+
+.btn {
+    padding: 5px 10px; 
+    font-size: 0.9rem;
+}
+
+
+
+
+
+    .restrang-body {
+    padding-top: 100px;
+    
+    }
+        .restrang-body h1 {
+            color: #db582f;
+            font-size: 30px;
+        }
+
+
+.restaurang-card.row {
+    gap: 15px;
+}
+
+.restrang-body .restaurang-card {
+    max-width: 100%; 
+    margin: 0 auto;
+}
+
+.restrang-body .card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+    height: 100%; 
+}
+
+.restrang-body .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+ restrang-body.card-body {
+    background-color: #fff;
+    padding: 15px;
+    text-align: left;
+    height: 240px;
+    overflow-y: auto;
+}
+
+ restrang-body.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    color: black;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.restrang-body .card ul {
+    padding-left: 20px;
+    font-size: 0.9rem;
+}
+
+.restrang-body .btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+.omdome-body {
+
+    margin-top: 100px;
+}
+
+    .omdome-body h2 {
+        color: #db582f;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+omdome-container .container {
+    padding: 0 15px; 
+}
+
+omdome-container .row {
+    margin: 0; 
+}
+
+omdome-container .card {
+    margin: 0; 
+    border: none; 
+}
+
+omdome-container .card-body {
+    padding: 10px; 
+}
+
+omdome-container .img-fluid {
+    height: 100%; 
+    object-fit: cover; 
+}

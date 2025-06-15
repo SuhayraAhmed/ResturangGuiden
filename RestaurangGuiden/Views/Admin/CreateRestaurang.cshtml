@@ -1,0 +1,55 @@
+﻿@model RestaurangGuiden.Models.Restaurang
+
+
+<body class="Admin-index">
+
+
+    <h1>@(Model.Id == 0 ? "Lägg till Restaurang" : "Redigera Restaurang")</h1>
+
+    <form asp-action="CreateRestaurang" enctype="multipart/form-data" class="restaurang-form mb-5">
+        @if (Model.Id != 0)
+        {
+            <input type="hidden" asp-for="Id" />  
+        }
+
+        <div class="form-group">
+            <label for="Namn">Namn</label>
+            <input type="text" class="form-control" id="Namn" asp-for="Namn" placeholder="Ange restaurangens namn" />
+        </div>
+        <div class="form-group">
+            <label for="Adress">Adress</label>
+            <input type="text" class="form-control" id="Adress" asp-for="Adress" placeholder="Ange restaurangens adress" />
+        </div>
+        <div class="form-group">
+            <label for="Bild">Bild</label>
+            <input type="file" class="form-control" id="Bild" name="bild" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            @(Model.Id == 0 ? "Spara" : "Uppdatera") 
+        </button>
+    </form>
+
+    <!-- Kort för att visa restaurangen som läggs till -->
+    @if (Model.BildUrl != null)
+    {
+        <div class="restaurang-card mt-5">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="@Model.BildUrl" class="img-fluid rounded-start" alt="Restaurang Bild">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model.Namn</h5>
+                            <p class="card-text">@Model.Adress</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</body>
+

@@ -1,0 +1,32 @@
+﻿@model RestaurangGuiden.Models.Account
+@{
+
+<body class="Inlognings-body">
+
+
+        <div class="account-container">
+            <div class="box form-box" id="login-form">
+                <h2>Logga in</h2>
+                <form asp-action="Login" method="post">
+                    <div class="field input">
+                        <input type="text" asp-for="Username" id="username" placeholder="Användarnamn" required>
+                    </div>
+                    <div class="field input">
+                        <input type="password" asp-for="Password" id="password" placeholder="Lösenord" required>
+                    </div>
+                    <button type="submit">Logga in</button>
+
+                </form>
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div style="color:white;">@ViewBag.ErrorMessage</div>
+                }
+            </div>
+        </div>
+
+
+</body>
+  
+
+
+}
