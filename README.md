@@ -15,18 +15,15 @@ B. MVC-projekt (Restaurangguider) ops!!! både API som är Resturang Omdome och 
 Detta är den del användarna möter – ett webbgränssnitt där man kan: 
 Se restaurangens namn, bild och pris
 Läsa beskrivningar
-Se mer info i video 
-Teknik och programmering
+användare kan  både läsa och skriva  omdömen om restaurangen 
+Scrolla ner för att se mer info om de befintlig resturangerna
+
+
+Teknik och programmering:
 Projektet bygger på moderna tekniker:
 Programmeringsspråk: C#
-
-
 Ramverk: ASP.NET Core MVC och ASP.NET Web API
-
-
 Databas: SQLite
-
-
 Datautbyte: JSON-format
 
 
