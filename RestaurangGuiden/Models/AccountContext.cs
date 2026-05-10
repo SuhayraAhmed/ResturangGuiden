@@ -2,7 +2,7 @@
 
 namespace RestaurangGuiden.Models
 {
-    public class AccountContext : DbContext                              //Den har klasse hanterar databasen för användarkonton.
+    public class AccountContext : DbContext                              
 
     
     {
