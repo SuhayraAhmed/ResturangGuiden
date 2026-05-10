@@ -1,6 +1,6 @@
 # Restaurangguide – Restaurant Guide System
 
-Restaurangguide is a web-based restaurant guide system developed for both residents and visitors in Gothenburg. The purpose of the project is to make it easy to discover, explore, and read about different restaurants in the city, including both popular and lesser-known places.
+Restaurangguide is a web-based restaurant guide system developed for both residents and visitors in Gothenburg. The purpose of the project is to make it easy to discover and explore restaurants in the city, including both popular and lesser-known restaurants.
 
 Unlike large anonymous review platforms, this system focuses on a more local and personal user experience centered around Gothenburg’s restaurant scene.
 
@@ -10,18 +10,18 @@ Unlike large anonymous review platforms, this system focuses on a more local and
 
 The project consists of two connected applications:
 
-1. **ASP.NET Web API**
-2. **ASP.NET Core MVC Application**
+1. ASP.NET Web API  
+2. ASP.NET Core MVC Application
 
-Important:  
-Both the **API project** and the **MVC project** must be running simultaneously for the system to function correctly.  
+⚠️ Important:  
+Both the API project and the MVC project must run simultaneously for the system to function correctly.  
 The MVC application fetches restaurant data from the API using HTTP requests.
 
 ---
 
 # Features
 
-## API Features (Admin CRUD System)
+## API Features (CRUD Functionality)
 
 The API includes full CRUD functionality (Create, Read, Update, Delete) for administrators.
 
@@ -64,7 +64,7 @@ The MVC application is the user-facing part of the system where users can:
 - JSON
 
 ## Communication
-- HTTP requests using HttpClient
+- HttpClient
 
 ---
 
@@ -81,12 +81,20 @@ The MVC application communicates with the API using HTTP requests.
 
 ---
 
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/SuhayraAhmed/ResturangGuiden.git
+
 # Admin Login
 
-Administrators can log in to access the API’s CRUD functionality.
+Administrators can log in and access the API CRUD functionality.
 
 ## Admin Credentials
 
 ```text
 Email: restaurang@guiden.se
 Password: Admin123
+## 1. Clone the Repository
+---
+
