@@ -14,10 +14,10 @@ namespace RestaurangGuiden.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(Account input)                                           //Denna är från canvas för inlogning och säkerhet 
+        public async Task<IActionResult> Login(Account input)                                           
         {
 
-            bool accountValid = input.Username == "restaurang@gudien.se" && input.Password == "Admin123";                         // användarnamn och lösenord
+            bool accountValid = input.Username == "restaurang@gudien.se" && input.Password == "Admin123";                         
 
 
             if (!accountValid)
@@ -31,16 +31,14 @@ namespace RestaurangGuiden.Controllers
             identity.AddClaim(new Claim(ClaimTypes.Name, input.Username));
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
 
-            return RedirectToAction("Index", "Admin");                                                                                      // går vi till till admin-sidan
-
+            return RedirectToAction("Index", "Admin");                                                                                     
 
         }
 
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");                                                                                      // tillbaka till inloggningssidan
-        }
+            return RedirectToAction("Index", "Home");                                                                                      
 
         
     }
