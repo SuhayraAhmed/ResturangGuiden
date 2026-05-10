@@ -1,49 +1,92 @@
-Projektbeskrivning  Restaurangguide
-Restaurangguide är ett webbaserat system som riktar sig till både invånare och besökare i Göteborg. Projektets syfte är att göra det enkelt att hitta och läsa om olika restauranger i staden både välkända och mindre kända restauranger. Till skillnad från stora, anonyma recensionssajter bygger denna plattform på en lokal, personlig användarupplevelse med fokus på Göteborgs restaurangscen.
-Projektets struktur
-API:t har färdiga CRUD-funktioner (Create, Read, Update, Delete) som är tillgängliga för administratörer. Det innebär att en admin kan:
-Lägga till nya restauranger
+# Restaurangguide – Restaurant Guide System
 
+Restaurangguide is a web-based restaurant guide system developed for both residents and visitors in Gothenburg. The purpose of the project is to make it easy to discover, explore, and read about different restaurants in the city, including both popular and lesser-known places.
 
-Uppdatera befintlig information
+Unlike large anonymous review platforms, this system focuses on a more local and personal user experience centered around Gothenburg’s restaurant scene.
 
+---
 
-Radera restauranger som inte längre är aktuella
+# Project Overview
 
+The project consists of two connected applications:
 
-B. MVC-projekt (Restaurangguider) ops!!! både API som är Resturang Omdome och MVC projektet mvc måste köras samtidigt för att det ska kunna fungera API i hemsidan 
-Detta är den del användarna möter – ett webbgränssnitt där man kan: 
-Se restaurangens namn, bild och pris
-Läsa beskrivningar
-användare kan  både läsa och skriva  omdömen om restaurangen 
-Scrolla ner för att se mer info om de befintlig resturangerna
+1. **ASP.NET Web API**
+2. **ASP.NET Core MVC Application**
 
+Important:  
+Both the **API project** and the **MVC project** must be running simultaneously for the system to function correctly.  
+The MVC application fetches restaurant data from the API using HTTP requests.
 
-Teknik och programmering:
-Projektet bygger på moderna tekniker:
-Programmeringsspråk: C#
-Ramverk: ASP.NET Core MVC och ASP.NET Web API
-Databas: SQLite
-Datautbyte: JSON-format
+---
 
+# Features
 
-Kommunikation mellan MVC och API: HTTP-anrop via HttpClient
-Så fungerar systemet så
-Administratören loggar in med användarnamn (restaurang@gudien.se) och ett lösenord (Admin123) och kan därefter använda API:ts CRUD-funktioner för att lägga till, redigera eller ta bort restauranger.
-MVC-applikationen skickar en HTTP-förfrågan till API:t för att hämta restauranginformationen.
-Användaren ser restaurangerna i ett enkelt och visuellt gränssnitt med namn, bild och pris.
-Vad som lagras i databasen
-I API-projektets databas lagras följande information:
-Restauranger: Namn, bildlänk, beskrivning
+## API Features (Admin CRUD System)
 
+The API includes full CRUD functionality (Create, Read, Update, Delete) for administrators.
 
-Omdömen : Användare kan se och skriva omdöme om resturangerna.
+An administrator can:
 
+- Add new restaurants
+- Update restaurant information
+- Delete restaurants
+- Manage restaurant reviews
 
-Framtida utvecklingsmöjligheter:
+---
 
-Filtrering av restauranger baserat på stadsdel eller prisklass
-Sortering efter högsta betyg eller flest omdömen
-Inloggning för användare för att spara favoritrestauranger eller tidigare omdömen
+## MVC Application Features
 
+The MVC application is the user-facing part of the system where users can:
 
+- View restaurant names
+- View restaurant images
+- View restaurant prices
+- Read restaurant descriptions
+- Read restaurant reviews
+- Write reviews for restaurants
+- Scroll through available restaurants in a visual interface
+
+---
+
+# Technologies Used
+
+## Programming Language
+- C#
+
+## Frameworks
+- ASP.NET Core MVC
+- ASP.NET Web API
+
+## Database
+- SQLite
+
+## Data Exchange
+- JSON
+
+## Communication
+- HTTP requests using HttpClient
+
+---
+
+# System Architecture
+
+The MVC application communicates with the API using HTTP requests.
+
+### Flow:
+
+1. The MVC application sends an HTTP request to the API.
+2. The API retrieves restaurant data from the SQLite database.
+3. The API returns the data in JSON format.
+4. The MVC application displays the restaurant information to the user.
+
+---
+
+# Admin Login
+
+Administrators can log in to access the API’s CRUD functionality.
+
+## Admin Credentials
+
+```text
+Email: restaurang@guiden.se
+Password: Admin123
