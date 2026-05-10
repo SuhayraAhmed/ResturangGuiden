@@ -18,7 +18,6 @@ namespace RestaurangGuiden.Controllers
             _context = context;
         }
 
-        // Lista alla restauranger (Admin-sidan)
         public async Task<IActionResult> Index()
         {
             var restauranger = await _context.Restauranger
@@ -27,7 +26,7 @@ namespace RestaurangGuiden.Controllers
             return View(restauranger);
         }
 
-        // Skapa eller redigera restaurang
+     
         public async Task<IActionResult> CreateRestaurang(int? id)
         {
             if (id == null)
@@ -61,12 +60,12 @@ namespace RestaurangGuiden.Controllers
                     restaurang.BildUrl = "/Img/" + fileName;
                 }
 
-                // Skapa eller uppdatera restaurang
+                
                 if (restaurang.Id == 0)  
                 {
                     _context.Add(restaurang);
                 }
-                else  // Uppdatera en befintlig restaurang
+                else 
                 {
                     _context.Update(restaurang);
                 }
@@ -79,7 +78,7 @@ namespace RestaurangGuiden.Controllers
         }
 
 
-        // Lägg till meny till en restaurang
+     
         public IActionResult CreateMeny(int restaurangId)
         {
             ViewData["RestaurangId"] = restaurangId;
@@ -138,7 +137,7 @@ namespace RestaurangGuiden.Controllers
             }
 
             
-            return RedirectToAction(nameof(Index));  // Skickar tillbaka användaren till listan av restauranger
+            return RedirectToAction(nameof(Index));  
         }
 
 
@@ -147,7 +146,7 @@ namespace RestaurangGuiden.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");  // Tillbaka till hemsidan efter utloggning
+            return RedirectToAction("Index", "Home");  
         }
     }
 }
