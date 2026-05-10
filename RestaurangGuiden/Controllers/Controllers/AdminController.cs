@@ -101,8 +101,6 @@ namespace RestaurangGuiden.Controllers
 
 
 
-        // GET: Admin/Delete/5
-        // GET: Admin/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
             var restaurang = await _context.Restauranger
@@ -113,10 +111,10 @@ namespace RestaurangGuiden.Controllers
                 return NotFound();
             }
 
-            return View(restaurang);  // Skicka restaurangen till Delete-vyn
+            return View(restaurang);  
         }
 
-        // POST: Admin/Delete/5
+      
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -125,7 +123,7 @@ namespace RestaurangGuiden.Controllers
 
             if (restaurang != null)
             {
-                // Om restaurangen har en bild, ta bort den från servern
+                
                 if (!string.IsNullOrEmpty(restaurang.BildUrl))
                 {
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", restaurang.BildUrl.TrimStart('/'));
@@ -139,8 +137,7 @@ namespace RestaurangGuiden.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            // Efter borttagning, omdirigera tillbaka till Index-sidan
-            return RedirectToAction(nameof(Index));  // Skickar tillbaka användaren till listan av restauranger
+            return RedirectToAction(nameof(Index));  
         }
 
 
@@ -149,7 +146,7 @@ namespace RestaurangGuiden.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");  // Tillbaka till hemsidan efter utloggning
+            return RedirectToAction("Index", "Home");  
         }
     }
 }
