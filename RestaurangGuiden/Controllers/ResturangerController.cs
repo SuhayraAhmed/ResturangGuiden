@@ -48,7 +48,7 @@ namespace RestaurangGuiden.Controllers
             }
             catch (Exception ex)
             {
-                // logga vid behov
+                
             }
 
             var modell = new RestaurangMedOmdomenViewModel
