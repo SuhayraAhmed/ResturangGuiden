@@ -17,31 +17,31 @@ public class RestaurantService
         try
         {
             var url = "https://localhost:7292/api/Resturanger";
-            Console.WriteLine($"📡 Hämtar data från API: {url}");
+            Console.WriteLine($" Hämtar data från API: {url}");
 
             var response = await _httpClient.GetAsync(url);
-            Console.WriteLine($"🔄 API-svar: {response.StatusCode}");
+            Console.WriteLine($" API-svar: {response.StatusCode}");
 
             response.EnsureSuccessStatusCode();
 
             var json = await response.Content.ReadAsStringAsync();
-            Console.WriteLine($"📦 JSON från API: {json}");
+            Console.WriteLine($" JSON från API: {json}");
 
             var restaurants = JsonSerializer.Deserialize<List<Omdome>>(json,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             if (restaurants == null)
             {
-                Console.WriteLine("❌ JSON var null! API returnerar ingen data.");
+                Console.WriteLine(" JSON var null! API returnerar ingen data.");
                 return new List<Omdome>();
             }
 
-            Console.WriteLine($"✅ {restaurants.Count} restauranger hämtade.");
+            Console.WriteLine($" {restaurants.Count} restauranger hämtade.");
             return restaurants;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ API-fel: {ex.Message}");
+            Console.WriteLine($" API-fel: {ex.Message}");
             return new List<Omdome>();
         }
     }
