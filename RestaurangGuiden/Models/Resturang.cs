@@ -10,7 +10,7 @@ public class Omdome
     public int RestaurangId { get; set; }
 
     [JsonPropertyName("betyg")]
-    public int Betyg { get; set; }  // T.ex. 1–5
+    public int Betyg { get; set; }  
 
     [JsonPropertyName("kommentar")]
     public string Kommentar { get; set; } = string.Empty;
