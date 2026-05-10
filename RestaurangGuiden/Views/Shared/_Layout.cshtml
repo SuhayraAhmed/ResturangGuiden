@@ -34,9 +34,9 @@
                         </li>
 
                         
-                        @if (User.Identity.IsAuthenticated && ViewContext.RouteData.Values["controller"].ToString() == "Admin")        @*Har använt Chatgpt här för att Logga in knappen ska bara visas när användaren har utloggat annars logga ut *@
+                        @if (User.Identity.IsAuthenticated && ViewContext.RouteData.Values["controller"].ToString() == "Admin")       
                         {
-                            <!-- Visar "Logga ut"-knappen endast om användaren är på admin-sidan -->
+                            
                             <li>
                                 <a class="nav-link" href="/Account/login" title="Logout">
 
